@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORO</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+        header {
+            background-color: #fff;
+            color: #000;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #800000;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0 10px;
+        }
+        nav a:hover {
+            background-color: #666;
+        }
+        section {
+            padding: 20px;
+            margin-top: 50px;
+            display: none; /* Oculta todas las secciones por defecto */
+        }
+        footer {
+            background-color: #800000;  /*cambio el color de abajo de paguin*/
+            color: #000;
+            text-align: center;
+            padding: 10px 0;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            background-image: url('image/fondo.jpg'); /* Agrega una imagen de fondo al footer */
+            background-size: cover; /* Ajusta la imagen para cubrir todo el footer */
+            
+        }
+        .corner-image {
+            position: absolute;
+            width: 100px;
+            height: auto;
+        }
+        .top-left {
+            top: 0;
+            left: 0;
+        }
+        .top-right {
+            top: 0;
+            right: 0;
+        }
+        .bottom-left {
+            bottom: 0;
+            left: 0;
+        }
+        .bottom-right {
+            bottom: 0;
+            right: 0;
+        }
+          .news {
+            width: 48%;
+            float: left;
+            margin-right: 2%;
+        }
+        .informacion-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .informacion {
+            width: 50%;
+            padding-right: 20px;
+        }
+        .videos {
+            width: 45%;
+        }
+        .videos iframe {
+            width: 50%;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Imágenes en las esquinas -->
+    <img src="image/colegio.jpg" alt="Top Left Image" class="corner-image top-left">
+    <img src="image/uacm.jpg" alt="Top Right Image" class="corner-image top-right">
+    
+
+    <header>
+        <h1>Centro de Desarrollo de Software</h1>
+    </header>
+    <nav>
+        <a href="#" onclick="mostrarSeccion('principal')">Principal</a>
+        <a href="#" onclick="mostrarSeccion('informacion')">Información</a>
+        <a href="#" onclick="mostrarSeccion('contacto')">Contacto</a>
+    </nav>
+    <section id="principal">
+        <div class="news">
+            <h2>4° Jornada de Software Libre</h2>
+            <p> </p>
+            <p></p>
+        </div>
+    </section>
+     <section id="informacion">
+        <div class="informacion-container">
+            <div class="videos">
+                <h2>Videos informativos</h2>
+                <!-- Asegúrate de que el src del iframe sea el enlace correcto del video -->
+                <iframe src="https://www.youtube.com/embed/dE4UdkjxH-A" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="informacion">
+                <h2>Información</h2>
+                <p><span style="color: #333333;">   
+                <strong>Los bot de charla o bot conversacional, son aplicaciones software <br/>
+                que surgen en los años 60.</strong><br/>
+                 M. en C.C. Benito Samuel Lopez Razos</p>
+               
+            </div>
+        </div>
+    </section>
+    <section id="contacto" >
+        <div style="display:flex;">
+            <div style="flex:1;">
+                <h2>Información de Contacto</h2>
+                <p>
+                <span style="color: #333333;">   
+                <strong>Nombre Completo:</strong>
+                 Marcos López Chimil<br/>
+                <strong>Teléfono:</strong>
+                </span><a href="tel:525558580538">+55 (55)58580538</a><br/> 
+                <span style="color: #333333;">
+                <strong>Ext:</strong>
+                </span><a href="14532">14532</a><br/>
+                <span style="color: #333333;">
+                <strong>Correo:</strong>
+                </span><a href="marcos.lopez@uacm.edu.mx">marcos.lopez@uacm.edu.mx</a><br />
+                <span style="color: #333333;">   
+                <strong>Área:</strong>
+                Ciencia y Tecnología <br/>
+                <span style="color: #333333;">   
+                <strong>Plantel:</strong>
+                San Lorenzo Tezonco <br/>
+                </p>
+            </div>
+            <div style = "flex: 1;">
+                <h2>Ubicación</h2>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3764.4643352527936!2d-99.06361808592903!3d19.314144392087646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce025ef919d837%3A0x8976a765f69064e3!2sUACM%20San%20Lorenzo%20Tezonco!5e0!3m2!1ses-419!2smx!4v1645893728652!5m2!1ses-419!2smx" width="600" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+    <footer id="pieDePagina">
+        <p>Derechos Reservados &copy; 2024</p>
+    </footer>
+    
+    <script>
+        function mostrarSeccion(id) {
+            // Oculta todas las secciones
+            var secciones = document.getElementsByTagName("section");
+            for (var i = 0; i < secciones.length; i++) {
+                secciones[i].style.display = "none";
+            }
+            // Muestra la sección correspondiente al id proporcionado
+            document.getElementById(id).style.display = "block";
+        }
+        // Muestra la sección principal por defecto al cargar la página
+        mostrarSeccion('principal');
+
+        function ajustarFooter() {
+            var body = document.body,
+                html = document.documentElement;
+
+            var altura = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+
+            if (altura > window.innerHeight) {
+                document.querySelector("footer").style.position = "relative";
+            } else {
+                document.querySelector("footer").style.position = "fixed";
+            }
+        }
+
+        // Ejecutar la función cuando la ventana cambie de tamaño
+        window.addEventListener("resize", ajustarFooter);
+        
+        // Ejecutar la función al cargar la página
+        window.addEventListener("load", ajustarFooter);
+       
+    </script>
+</body>
+</html>
