@@ -10,6 +10,7 @@
             margin: 0;
             padding: 0;
             position: relative;
+            min-height: 100vH;
         }
         header {
             background-color: #fff;
@@ -36,7 +37,7 @@
             display: none; /* Oculta todas las secciones por defecto */
         }
         footer {
-            background-color: #800000;  /*cambio el color de abajo de paguin*/
+            /*background-color: #800000;  /*cambio el color de abajo de paguin*/
             color: #000;
             text-align: center;
             padding: 10px 0;
@@ -88,6 +89,26 @@
         .videos iframe {
             width: 50%;
             height: 150px;
+        }
+        /* Estilos para dispositivos de escritorio */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Estilos para tabletas */
+        @media screen and (max-width: 992px) {
+            .container {
+                padding: 15px;
+            }
+        }
+
+        /* Estilos para celulares */
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
         }
     </style>
 </head>
