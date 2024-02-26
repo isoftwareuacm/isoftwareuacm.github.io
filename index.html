@@ -11,6 +11,8 @@
             padding: 0;
             position: relative;
             min-height: 100vH;
+            display: flex;
+            flex-direction: column;
         }
         header {
             background-color: #fff;
@@ -41,7 +43,7 @@
             color: #000;
             text-align: center;
             padding: 10px 0;
-            position: absolute;
+            margin-top: auto;
             width: 100%;
             bottom: 0;
             background-image: url('image/fondo.jpg'); /* Agrega una imagen de fondo al footer */
@@ -110,6 +112,18 @@
                 padding: 10px;
             }
         }
+
+       .imagen-ampliable {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: auto;
+            cursor: pointer;
+            transition: transform 0.5s ease; /* Agrega una transición suave al ampliar la imagen */
+        }
+        .imagen-ampliable:hover {
+            transform: scale(1.2); /* Hace que la imagen se agrande ligeramente al pasar el mouse sobre ella */
+        }
     </style>
 </head>
 <body>
@@ -126,11 +140,13 @@
         <a href="#" onclick="mostrarSeccion('informacion')">Información</a>
         <a href="#" onclick="mostrarSeccion('contacto')">Contacto</a>
     </nav>
-    <section id="principal">
-        <div class="news">
+    <section id="principal" style="display: flex; justify-content: center; align-items: center;">
+        <div class="news" id="contenedor-imagen">
             <h2>4° Jornada de Software Libre</h2>
-            <p> </p>
-            <p></p>
+            <!-- Contenedor de la imagen -->
+            <div id="contenedor-imagen" style="text-align: center;">
+                <img src="image/programa.jpg" alt="Imagen Principal" class="imagen-ampliable">
+           </div>
         </div>
     </section>
      <section id="informacion">
@@ -156,7 +172,8 @@
                 <h2>Información de Contacto</h2>
                 <p>
                 <span style="color: #333333;">   
-                <strong>Contacto de Area:</strong>
+                <strong>Nombre Completo:</strong>
+                 Marcos López Chimil<br/>
                 <strong>Teléfono:</strong>
                 </span><a href="tel:525558580538">+55 (55)58580538</a><br/> 
                 <span style="color: #333333;">
@@ -214,6 +231,7 @@
         
         // Ejecutar la función al cargar la página
         window.addEventListener("load", ajustarFooter);
+
        
     </script>
 </body>
